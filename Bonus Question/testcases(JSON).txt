@@ -1,0 +1,296 @@
+testcases(JSON)
+
+####################################### ADD USER + VEHICLE ###############################
+[
+  {
+    "operation": "add_user",
+    "params": {
+      "name": "Rohan",
+      "gender": "M",
+      "age": 36
+    }
+  },
+  {
+    "operation": "add_vehicle",
+    "params": {
+      "owner": "Rohan",
+      "model": "Swift",
+      "registration_number": "KA-01-12345"
+    }
+  },
+  {
+    "operation": "add_user",
+    "params": {
+      "name": "Shashank",
+      "gender": "M",
+      "age": 29
+    }
+  },
+  {
+    "operation": "add_vehicle",
+    "params": {
+      "owner": "Shashank",
+      "model": "Baleno",
+      "registration_number": "TS-05-62395"
+    }
+  },
+  {
+    "operation": "add_user",
+    "params": {
+      "name": "Nandini",
+      "gender": "F",
+      "age": 29
+    }
+  },
+  {
+    "operation": "add_user",
+    "params": {
+      "name": "Shipra",
+      "gender": "F",
+      "age": 27
+    }
+  },
+  {
+    "operation": "add_vehicle",
+    "params": {
+      "owner": "Shipra",
+      "model": "Polo",
+      "registration_number": "KA-05-41491"
+    }
+  },
+  {
+    "operation": "add_vehicle",
+    "params": {
+      "owner": "Shipra",
+      "model": "Activa",
+      "registration_number": "KA-12-12332"
+    }
+  },
+  {
+    "operation": "add_user",
+    "params": {
+      "name": "Gaurav",
+      "gender": "M",
+      "age": 29
+    }
+  },
+  {
+    "operation": "add_user",
+    "params": {
+      "name": "Rahul",
+      "gender": "M",
+      "age": 35
+    }
+  },
+  {
+    "operation": "add_vehicle",
+    "params": {
+      "owner": "Rahul",
+      "model": "XUV",
+      "registration_number": "KA-05-1234"
+    }
+  }
+]
+
+######################################### OFFER RIDE ###############################
+{
+  "operation": "offer_ride",
+  "params": {
+    "user": "Rohan",
+    "origin": "Hyderabad",
+    "available_seats": 1,
+    "vehicle": "Swift, KA-01-12345",
+    "destination": "Bangalore"
+  }
+}
+
+{
+  "operation": "offer_ride",
+  "params": {
+    "user": "Shipra",
+    "origin": "Bangalore",
+    "available_seats": 1,
+    "vehicle": "Activa, KA-12-12332",
+    "destination": "Mysore"
+  }
+}
+
+{
+  "operation": "offer_ride",
+  "params": {
+    "user": "Shipra",
+    "origin": "Bangalore",
+    "available_seats": 2,
+    "vehicle": "Polo, KA-85-41491",
+    "destination": "Mysore"
+  }
+}
+
+{
+  "operation": "offer_ride",
+  "params": {
+    "user": "Shashank",
+    "origin": "Hyderabad",
+    "available_seats": 2,
+    "vehicle": "Baleno, TS-05-62395",
+    "destination": "Bangalore"
+  }
+}
+
+{
+  "operation": "offer_ride",
+  "params": {
+    "user": "Rahul",
+    "origin": "Hyderabad",
+    "available_seats": 5,
+    "vehicle": "XUV, KA-05-1234",
+    "destination": "Bangalore"
+  }
+}
+
+{
+  "operation": "offer_ride",
+  "params": {
+    "user": "Rohan",
+    "origin": "Bangalore",
+    "available_seats": 1,
+    "vehicle": "Swift, KA-01-12345",
+    "destination": "Pune"
+  }
+}
+
+
+######################################### SELECT RIDE ###############################
+
+{
+  "operation": "select_ride",
+  "params": {
+    "user": "Nandini",
+    "origin": "Bangalore",
+    "destination": "Mysore",
+    "seats": 1,
+    "selection_strategy": "Most Vacant"
+  }
+}
+
+{
+  "operation": "select_ride",
+  "params": {
+    "user": "Gaurav",
+    "origin": "Bangalore",
+    "destination": "Mysore",
+    "seats": 1,
+    "preferred_vehicle": "Activa"
+  }
+}
+
+{
+  "operation": "select_ride",
+  "params": {
+    "user": "Shashank",
+    "origin": "Mumbai",
+    "destination": "Bangalore",
+    "seats": 1,
+    "selection_strategy": "Most Vacant"
+  }
+}
+
+{
+  "operation": "select_ride",
+  "params": {
+    "user": "Rohan",
+    "origin": "Hyderabad",
+    "destination": "Bangalore",
+    "seats": 1,
+    "preferred_vehicle": "Baleno"
+  }
+}
+
+{
+  "operation": "select_ride",
+  "params": {
+    "user": "Shashank",
+    "origin": "Hyderabad",
+    "destination": "Bangalore",
+    "seats": 1,
+    "preferred_vehicle": "Polo"
+  }
+}
+
+######################################### END RIDE ##############################
+{
+  "operation": "end_ride",
+  "params": {
+    "ride_id": "2-a"
+  }
+}
+
+{
+  "operation": "end_ride",
+  "params": {
+    "ride_id": "2-b"
+  }
+}
+
+{
+  "operation": "end_ride",
+  "params": {
+    "ride_id": "2-c"
+  }
+}
+
+{
+  "operation": "end_ride",
+  "params": {
+    "ride_id": "2-d"
+  }
+}
+
+######################################### STATS RIDE ##############################
+
+{
+  "operation": "print_ride_stats",
+  "params": {
+    "user": "Nandini"
+  }
+}
+
+{
+  "operation": "print_ride_stats",
+  "params": {
+    "user": "Rohan"
+  }
+}
+
+{
+  "operation": "print_ride_stats",
+  "params": {
+    "user": "Shashank"
+  }
+}
+
+{
+  "operation": "print_ride_stats",
+  "params": {
+    "user": "Gaurav"
+  }
+}
+
+{
+  "operation": "print_ride_stats",
+  "params": {
+    "user": "Rahul"
+  }
+}
+
+{
+  "operation": "print_ride_stats",
+  "params": {
+    "user": "Shipra"
+  }
+}
+
+
+
+
+
